@@ -5,6 +5,9 @@
   "repository": "https://github.com/Shubidumdu/how-fast-wasm.git",
   "author": "Alan Seo <54790378+Shubidumdu@users.noreply.github.com>",
   "license": "MIT",
+  "dependencies": {
+    "my-wasm": "file:./pkg"
+  },
   "devDependencies": {
     "@webpack-cli/generators": "^2.4.2",
     "css-loader": "^6.7.1",
@@ -22,10 +25,11 @@
   },
   "description": "My webpack project",
   "scripts": {
-    "build": "webpack --mode=production --node-env=production",
-    "build:dev": "webpack --mode=development",
-    "build:prod": "webpack --mode=production --node-env=production",
+    "build": "yarn build:wasm && webpack --mode=production --node-env=production",
+    "build:dev": "yarn build:wasm && webpack --mode=development",
+    "build:prod": "yarn build",
+    "build:wasm": "wasm-pack build wasm --out-dir ../pkg",
     "watch": "webpack --watch",
-    "serve": "webpack serve"
+    "serve": "yarn build:wasm && webpack serve"
   }
 }
