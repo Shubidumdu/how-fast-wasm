@@ -1,0 +1,8 @@
+{
+  "name": "how-fast-wasm",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/Shubidumdu/how-fast-wasm.git",
+  "author": "Alan Seo <54790378+Shubidumdu@users.noreply.github.com>",
+  "license": "MIT"
+}
