@@ -29,7 +29,7 @@
     "build:dev": "yarn build:wasm && webpack --mode=development",
     "build:prod": "yarn build",
     "build:wasm": "wasm-pack build wasm --out-dir ../pkg",
-    "watch": "webpack --watch",
-    "serve": "yarn build:wasm && webpack serve"
+    "watch:wasm": "cargo watch -C wasm -s \"yarn build:wasm\"",
+    "serve": "yarn watch:wasm & webpack serve"
   }
 }
