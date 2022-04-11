@@ -1,15 +1,16 @@
 {
-  "name": "my-webpack-project",
+  "name": "how-fast-wasm",
   "version": "1.0.0",
   "main": "index.js",
   "repository": "https://github.com/Shubidumdu/how-fast-wasm.git",
   "author": "Alan Seo <54790378+Shubidumdu@users.noreply.github.com>",
   "license": "MIT",
   "dependencies": {
-    "my-wasm": "file:./pkg"
+    "my-wasm": "./wasm/pkg"
   },
   "devDependencies": {
     "@webpack-cli/generators": "^2.4.2",
+    "concurrently": "^7.1.0",
     "css-loader": "^6.7.1",
     "html-webpack-plugin": "^5.5.0",
     "mini-css-extract-plugin": "^2.6.0",
@@ -23,13 +24,13 @@
     "webpack-cli": "^4.9.2",
     "webpack-dev-server": "^4.8.1"
   },
-  "description": "My webpack project",
+  "description": "",
   "scripts": {
-    "build": "yarn build:wasm && webpack --mode=production --node-env=production",
-    "build:dev": "yarn build:wasm && webpack --mode=development",
-    "build:prod": "yarn build",
-    "build:wasm": "wasm-pack build wasm --out-dir ../pkg",
-    "watch:wasm": "cargo watch -C wasm -s \"yarn build:wasm\"",
-    "serve": "yarn watch:wasm & webpack serve"
+    "build": "webpack --mode=production --node-env=production",
+    "build:dev": "webpack --mode=development",
+    "build:wasm": "wasm-pack build ./wasm",
+    "watch": "webpack --watch",
+    "watch:wasm": "cargo watch -C wasm -s \"yarn build:wasm && yarn install --force\"",
+    "serve": "concurrently \"yarn watch:wasm\" \"yarn install --force && yarn webpack serve\""
   }
 }

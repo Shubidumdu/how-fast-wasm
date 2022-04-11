@@ -1,3 +1,5 @@
+import { greet } from "my-wasm";
+
 const startBtn = document.querySelector('#start');
 
 const visited: boolean[][] = [...new Array(6)].map(() => Array(6).fill(false));
@@ -30,3 +32,5 @@ const dfs = () => {
 };
 
 startBtn.addEventListener('click', dfs);
+
+greet();

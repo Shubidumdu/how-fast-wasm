@@ -11,12 +11,16 @@ const stylesHandler = isProduction
   : "style-loader";
 
 const config = {
+  cache: false,
   entry: "./src/index.ts",
   output: {
     path: path.resolve(__dirname, "dist"),
+    filename: '[name].[contenthash].js',
+    clean: true,
   },
   devServer: {
-    open: true,
+    open: false,
+    hot: true,
     host: "localhost",
   },
   plugins: [
@@ -30,6 +34,9 @@ const config = {
         test: /\.(ts|tsx)$/i,
         loader: "ts-loader",
         exclude: ["/node_modules/"],
+        options: {
+          transpileOnly: true,
+        },
       },
       {
         test: /\.css$/i,
