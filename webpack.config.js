@@ -12,7 +12,7 @@ const stylesHandler = isProduction
 
 const config = {
   cache: false,
-  entry: "./src/index.ts",
+  entry: "./src/index.tsx",
   output: {
     path: path.resolve(__dirname, "dist"),
     filename: '[name].[contenthash].js',
@@ -34,9 +34,11 @@ const config = {
         test: /\.(ts|tsx)$/i,
         loader: "ts-loader",
         exclude: ["/node_modules/"],
-        options: {
-          transpileOnly: true,
-        },
+      },
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        loader: "babel-loader",
       },
       {
         test: /\.css$/i,

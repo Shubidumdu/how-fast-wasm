@@ -1,6 +1,5 @@
-import { greet } from "my-wasm";
-
-const startBtn = document.querySelector('#start');
+import { greet, dfs as rustDfs } from "my-wasm";
+import '../style/index.scss';
 
 const visited: boolean[][] = [...new Array(6)].map(() => Array(6).fill(false));
 
@@ -31,6 +30,6 @@ const dfs = () => {
   }
 };
 
-startBtn.addEventListener('click', dfs);
-
 greet();
+dfs();
+rustDfs();
