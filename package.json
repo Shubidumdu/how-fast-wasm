@@ -5,6 +5,9 @@
   "author": "Alan Seo <54790378+Shubidumdu@users.noreply.github.com>",
   "license": "MIT",
   "dependencies": {
+    "@emotion/react": "^11.9.0",
+    "@emotion/styled": "^11.8.1",
+    "@mui/material": "^5.6.1",
     "my-wasm": "./wasm/pkg",
     "react": "^18.0.0",
     "react-dom": "^18.0.0"
@@ -12,10 +15,15 @@
   "devDependencies": {
     "@babel/preset-react": "^7.16.7",
     "@types/react-dom": "^18.0.0",
+    "@typescript-eslint/eslint-plugin": "^5.19.0",
+    "@typescript-eslint/parser": "^5.19.0",
     "@webpack-cli/generators": "^2.4.2",
     "babel-loader": "^8.2.4",
     "concurrently": "^7.1.0",
     "css-loader": "^6.7.1",
+    "eslint": "^8.13.0",
+    "eslint-config-google": "^0.14.0",
+    "eslint-plugin-react": "^7.29.4",
     "html-webpack-plugin": "^5.5.0",
     "install": "^0.13.0",
     "mini-css-extract-plugin": "^2.6.0",
