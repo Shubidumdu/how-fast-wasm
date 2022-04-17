@@ -6,6 +6,7 @@ const GridWrap = styled.div<{
 }>`
   display: grid;
   grid-template-columns: repeat(${({ col }) => col}, 1fr);
+  gap: 8px;
 `;
 
 type GridProps = {
