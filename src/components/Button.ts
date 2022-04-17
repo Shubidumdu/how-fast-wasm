@@ -1,8 +1,7 @@
-export default class CustomButton extends HTMLElement {
+export default class CustomButton extends HTMLButtonElement {
   constructor() {
     super();
-    this.innerHTML = `
-      <button>버튼</button>
-    `;
+    this.className = "button";
+    super();
   }
 }

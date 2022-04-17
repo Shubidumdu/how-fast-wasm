@@ -6,6 +6,7 @@
   "author": "Alan Seo <54790378+Shubidumdu@users.noreply.github.com>",
   "license": "MIT",
   "dependencies": {
+    "bulma": "^0.9.3",
     "my-wasm": "./wasm/pkg"
   },
   "devDependencies": {

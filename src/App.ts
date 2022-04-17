@@ -2,7 +2,7 @@ export default class HowFastWasm extends HTMLElement {
   constructor() {
     super();
     this.innerHTML = `
-      <custom-button></custom-button>
+      <button is="custom-button">버튼</button>
     `;
   }
 }
