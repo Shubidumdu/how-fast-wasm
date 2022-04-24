@@ -1,3 +1,16 @@
+const unFlippedStyle = {
+  background: 'white',
+};
+
+const flippedStyle = {
+  background: 'black',
+};
+
+const defaultStyle = {
+  ...unFlippedStyle,
+  paddingBottom: '100%',
+};
+
 export default class FlipCard extends HTMLElement {
   $container: HTMLDivElement;
 
@@ -5,14 +18,27 @@ export default class FlipCard extends HTMLElement {
     super();
     this.$container = document.createElement('div');
     this.$container.className = 'card';
+    Object.assign(this.$container.style, defaultStyle);
   }
 
   render() {
     if (this.flipped) {
-      this.$container.classList.add('flipped');
+      this.$container.animate([
+        defaultStyle,
+        flippedStyle,
+      ], {
+        duration: 300,
+        fill: 'forwards'
+      });
     }
     else {
-      this.$container.classList.remove('flipped');
+      this.$container.animate([
+        flippedStyle,
+        defaultStyle,
+      ], {
+        duration: 300,
+        fill: 'forwards'
+      });
     }
   }
   
