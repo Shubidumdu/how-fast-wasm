@@ -1,8 +1,5 @@
 import FlipCard from './Card';
 
-const INITIAL_ROW_SIZE = 100;
-const INITIAL_COL_SIZE = 100;
-
 const createGrid = (row: number, col: number) => Array.from(Array(row), () => Array(col).fill(false));
 
 const style: Partial<CSSStyleDeclaration> = {
@@ -13,9 +10,9 @@ const style: Partial<CSSStyleDeclaration> = {
 export default class CardGrid extends HTMLElement {
   #cards: boolean[][];
 
-  constructor() {
+  constructor([row, col]: [number, number]) {
     super();
-    this.cards = createGrid(INITIAL_ROW_SIZE, INITIAL_COL_SIZE);
+    this.cards = createGrid(row, col);
     Object.assign(this.style, style);
   }
 
@@ -30,6 +27,10 @@ export default class CardGrid extends HTMLElement {
   
   get cards() {
     return this.#cards;
+  }
+
+  get size() {
+    return [this.#cards.length, this.#cards[0].length];
   }
   
   render = () => {

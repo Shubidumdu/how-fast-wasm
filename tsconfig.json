@@ -2,10 +2,11 @@
   "compilerOptions": {
     "allowSyntheticDefaultImports": true,
     "noImplicitAny": true,
-    "module": "es6",
+    "module": "esnext",
     "target": "es6",
     "allowJs": true,
     "moduleResolution": "Node",
+    "lib": ["WebWorker", "es6", "ScriptHost", "DOM"]
   },
   "include": ["src"],
   "files": ["src/index.ts"]

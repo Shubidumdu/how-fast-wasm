@@ -60,6 +60,41 @@ const config = {
   },
 };
 
+const worker = {
+  entry: "./src/dfs.worker.ts",
+  output: {
+      filename: 'worker_name.worker.js',
+      path: path.resolve(__dirname, 'dist'),
+      publicPath: "dist/"
+  },
+  target: "webworker",
+  devtool: "source-map",
+  mode: "development",
+  resolve: {
+      modules: [
+          'src',
+          'node_modules'
+      ],
+      extensions: [
+          '.js',
+          '.ts',
+          '.tsx'
+      ],
+      plugins: [],
+  },
+  module: {
+      rules: [
+          {
+              test: /\.tsx?$/,
+              loader: 'ts-loader',
+              options: {
+                  transpileOnly: true,
+              },
+          },
+      ],
+  },
+}
+
 module.exports = () => {
   if (isProduction) {
     config.mode = "production";
