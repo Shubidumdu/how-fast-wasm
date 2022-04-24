@@ -33,5 +33,5 @@ module.exports = {
       'always'
     ]
   },
-  'ignorePatterns': ['.eslintrc.js'],
+  'ignorePatterns': ['.eslintrc.js', 'webpack.config.js'],
 };

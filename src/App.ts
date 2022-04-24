@@ -3,6 +3,7 @@ export default class HowFastWasm extends HTMLElement {
     super();
     this.innerHTML = `
       <button is="custom-button">버튼</button>
+      <card-grid></card-grid>
     `;
   }
 }

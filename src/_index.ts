@@ -1,4 +1,4 @@
-import { greet } from "my-wasm";
+import { greet } from 'my-wasm';
 
 const startBtn = document.querySelector('#start');
 
