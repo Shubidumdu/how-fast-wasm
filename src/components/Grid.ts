@@ -1,5 +1,7 @@
-const INITIAL_ROW_SIZE = 10;
-const INITIAL_COL_SIZE = 10;
+import FlipCard from './Card';
+
+const INITIAL_ROW_SIZE = 100;
+const INITIAL_COL_SIZE = 100;
 
 const createGrid = (row: number, col: number) => Array.from(Array(row), () => Array(col).fill(false));
 
@@ -42,5 +44,11 @@ export default class CardGrid extends HTMLElement {
   resize = (row: number, col: number) => {
     this.cards = createGrid(row, col);
     this.render();
+  };
+
+  flip = (row: number, col: number) => {
+    const index = row * (this.#cards[0].length) + col;
+    const targetCard: FlipCard = this.querySelector(`flip-card:nth-child(${index + 1})`);
+    targetCard.flipped = true;
   };
 }
