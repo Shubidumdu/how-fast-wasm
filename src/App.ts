@@ -2,7 +2,8 @@ import CustomButton from './components/Button';
 import CardGrid from './components/Grid';
 import { ResponseEventData } from './workers/dfsWorker';
 
-const dfsWorker = new Worker(new URL('./workers/dfsWorker.ts', import.meta.url));
+// const dfsWorker = new Worker(new URL('./workers/dfsWorker.ts', import.meta.url));
+const dfsWorker = new Worker(new URL('./workers/dfsWorker.wasm.ts', import.meta.url));
 
 const INITIAL_ROW_SIZE = 100;
 const INITIAL_COL_SIZE = 100;
@@ -33,9 +34,11 @@ export default class HowFastWasm extends HTMLElement {
     }: MessageEvent<ResponseEventData>) => {
       const { type, performance, position } = data;
       const [row, col] = position;
-      console.log(type, row, col, performance);
       if (type === 'search') {
         this.#grid.flip(row, col);
+      }
+      if (type === 'finish') {
+        console.log(type, row, col, performance);
       }
     });
   };

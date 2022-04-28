@@ -35,7 +35,7 @@
     "build:dev": "webpack --mode=development",
     "build:wasm": "wasm-pack build ./wasm",
     "watch": "webpack --watch",
-    "watch:wasm": "cargo watch -C wasm -s \"yarn build:wasm && yarn install --force\"",
+    "watch:wasm": "cargo watch -C wasm -s \"yarn build:wasm --release && yarn install --force\"",
     "serve": "concurrently \"yarn watch:wasm\" \"yarn install --force && yarn webpack serve\""
   }
 }
