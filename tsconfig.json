@@ -2,16 +2,12 @@
   "compilerOptions": {
     "allowSyntheticDefaultImports": true,
     "noImplicitAny": true,
-    "module": "es6",
-    "target": "es5",
+    "module": "esnext",
+    "target": "es6",
     "allowJs": true,
     "moduleResolution": "Node",
-    "baseUrl": ".",
-    "jsx": "react-jsx",
+    "lib": ["WebWorker", "es6", "ScriptHost", "DOM"]
   },
-  "includes": [
-    "**/*.ts",
-    "**/*.tsx"
-  ],
-  "files": ["src/index.tsx"]
+  "include": ["src"],
+  "files": ["src/index.ts"]
 }
