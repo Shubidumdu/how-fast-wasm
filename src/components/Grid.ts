@@ -4,7 +4,7 @@ const createGrid = (row: number, col: number) => Array.from(Array(row), () => Ar
 
 const style: Partial<CSSStyleDeclaration> = {
   display: 'grid',
-  gap: '8px',
+  // gap: '8px',
 };
 
 export default class CardGrid extends HTMLElement {

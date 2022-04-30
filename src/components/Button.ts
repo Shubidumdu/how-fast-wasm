@@ -3,5 +3,4 @@ export default class CustomButton extends HTMLButtonElement {
     super();
     this.className = 'button';
   }
-
 }

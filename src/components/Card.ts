@@ -1,9 +1,11 @@
 const unFlippedStyle = {
   background: 'white',
+  transform: 'rotateY(0deg)',
 };
 
 const flippedStyle = {
-  background: 'black',
+  background: 'lightgrey',
+  transform: 'rotateY(180deg)',
 };
 
 const defaultStyle = {
